@@ -9,7 +9,7 @@ import BookingPage from './components/BookingPage';
 import ConfirmedBooking from './components/ConfirmedBooking';
 
 // useReducer instead of useState here because available times
-// depend on what date is picked — reducer keeps it in one spot
+// depend on what date is picked — kinda like a state machine
 
 export const initializeTimes = () => {
   return fetchAPI(new Date());
