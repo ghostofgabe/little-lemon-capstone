@@ -5,68 +5,61 @@
 ![Jest](https://img.shields.io/badge/Tested_with-Jest-C21325?logo=jest&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A React front-end app for **Little Lemon**, a fictional Mediterranean restaurant in Chicago. Built as the capstone project for the [Meta Front-End Developer Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer) on Coursera.
-
-The app features a complete table reservation system with form validation, responsive design, and accessible markup.
+Capstone project for the [Meta Front-End Developer Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer) on Coursera. It's a React app for a fictional restaurant (Little Lemon) with a table booking system.
 
 ---
 
 ## Features
 
-- **Table Reservation System** -- date picker, time selector (times update based on selected date), guest count, occasion picker
-- **Client-Side Validation** -- real-time error messages, disabled submit until all fields are valid, touched-field tracking so errors don't yell at you before you've even started
-- **Responsive Design** -- mobile-first CSS with Grid and Flexbox, breakpoints at 768px and 1024px
-- **Accessible** -- semantic HTML (`header`, `nav`, `main`, `section`, `article`, `footer`), ARIA labels on form inputs, proper heading hierarchy, keyboard navigable
-- **React Router v6** -- client-side routing for Home, Booking, and Confirmation pages
-- **useReducer for State** -- available booking times managed through a reducer since they depend on the selected date
-- **Unit Tests** -- Jest + React Testing Library covering form rendering, validation, state initialization, and reducer logic
+- Table reservation form with date, time, guests, and occasion
+- Times update based on selected date (fetched from a mock API)
+- Client-side validation -- errors only show after you interact with a field
+- Responsive layout (mobile-first, breakpoints at 768px and 1024px)
+- Semantic HTML and ARIA attributes for accessibility
+- React Router v6 for page navigation
+- useReducer to manage available time slots
+- Unit tests with Jest and React Testing Library
 
 ---
 
 ## Tech Stack
 
-| Tool | Purpose |
+| Tool | What it does |
 |------|---------|
-| React 18 (CRA) | UI framework |
+| React 19 (CRA) | UI framework |
 | React Router v6 | Client-side routing |
-| CSS (vanilla) | Styling -- no CSS-in-JS, keeping it straightforward |
+| CSS | Styling, one stylesheet per component |
 | Jest + RTL | Unit testing |
-| Google Fonts | Markazi Text + Karla (Little Lemon brand fonts) |
+| Google Fonts | Markazi Text + Karla |
 
 ---
 
 ## Getting Started
 
 ```bash
-# clone the repo
 git clone https://github.com/ghostofgabe/little-lemon-capstone.git
 cd little-lemon-capstone
-
-# install dependencies
 npm install
-
-# start the dev server
 npm start
 ```
 
-The app runs at `http://localhost:3000`.
+Runs at `http://localhost:3000`.
 
 ---
 
-## Running Tests
+## Tests
 
 ```bash
 npm test
 ```
 
-Tests cover:
-- `initializeTimes` returns expected available times from the mock API
-- `updateTimes` reducer returns updated times when date changes
-- `BookingForm` renders all fields correctly
-- Form validation shows errors on touched empty fields
-- Submit button is disabled when form is incomplete
-- `BookingPage` renders the heading
-- `Nav` renders all navigation links
+Covers:
+- initializeTimes and updateTimes reducer logic
+- BookingForm renders all fields
+- Validation errors show on touched empty fields
+- Submit button disabled when form is incomplete
+- BookingPage heading renders
+- Nav links render
 
 ---
 
@@ -77,38 +70,34 @@ src/
 ├── api.js                    # Mock API (seeded random time slots)
 ├── App.js                    # Root component, routing, reducer
 ├── App.css
-├── App.test.js               # All unit tests
-├── index.js                  # Entry point with BrowserRouter
-├── index.css                 # Global styles, CSS variables
+├── App.test.js               # Unit tests
+├── index.js                  # Entry point
+├── index.css                 # Global styles + CSS variables
 └── components/
-    ├── Header.js + .css      # Site header with logo
-    ├── Nav.js + .css         # Navigation links
-    ├── Hero.js + .css        # Landing hero with CTA
-    ├── Specials.js + .css    # Featured menu items
-    ├── Testimonials.js + .css # Customer reviews
-    ├── About.js + .css       # Restaurant backstory
-    ├── Footer.js + .css      # Contact info, nav
-    ├── BookingForm.js + .css # Reservation form with validation
-    ├── BookingPage.js + .css # Form wrapper/layout
-    ├── ConfirmedBooking.js + .css # Success page
-    └── Homepage.js           # Composes landing page sections
+    ├── Header.js + .css
+    ├── Nav.js + .css
+    ├── Hero.js + .css
+    ├── Specials.js + .css
+    ├── Testimonials.js + .css
+    ├── About.js + .css
+    ├── Footer.js + .css
+    ├── BookingForm.js + .css
+    ├── BookingPage.js + .css
+    ├── ConfirmedBooking.js + .css
+    └── Homepage.js
 ```
 
 ---
 
 ## Design Decisions
 
-**Why useReducer instead of useState for available times?**
-The available time slots depend on the selected date -- when the date changes, the times need to update. A reducer keeps that dependency logic in one place instead of scattering it across multiple `useEffect` calls. It's a cleaner pattern when state transitions depend on actions, similar to how a state machine handles game state.
+**useReducer instead of useState for times** -- The available times depend on which date you pick, so when the date changes the times need to update too. A reducer keeps that logic together instead of spreading it across effects.
 
-**Why vanilla CSS?**
-The Meta FE capstone specs don't call for CSS-in-JS or utility frameworks. Keeping it vanilla also means the CSS is easy to read and there's no build tooling overhead. Each component gets its own stylesheet for clean separation.
+**Vanilla CSS** -- The capstone doesn't require any CSS framework so I just used regular CSS. Each component has its own stylesheet.
 
-**Why controlled components with manual validation?**
-No form library (Formik, React Hook Form, etc.) -- this is a capstone project, so I wanted to show I understand how controlled inputs and validation work under the hood. The validation is simple enough that a library would be overkill anyway.
+**No form library** -- I could've used Formik or React Hook Form but the validation here is simple enough to do manually, and I wanted to show I understand how controlled inputs actually work.
 
-**Image placeholders instead of real images?**
-Used CSS gradients and emoji instead of external image files. Keeps the repo lightweight and avoids any licensing concerns. The layout and design still demonstrate responsive image handling.
+**Emoji placeholders** -- Used emoji and CSS gradients instead of images to keep the repo small and avoid dealing with image licensing.
 
 ---
 

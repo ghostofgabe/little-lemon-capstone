@@ -8,10 +8,8 @@ import Homepage from './components/Homepage';
 import BookingPage from './components/BookingPage';
 import ConfirmedBooking from './components/ConfirmedBooking';
 
-// ## Available Times Reducer ##
-// using useReducer because available times depend on the selected date
-// the reducer pattern keeps that dependency logic in one place
-// similar to how a game state machine handles transitions
+// useReducer instead of useState here because available times
+// depend on what date is picked — reducer keeps it in one spot
 
 export const initializeTimes = () => {
   return fetchAPI(new Date());
@@ -30,8 +28,7 @@ function App() {
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
   const navigate = useNavigate();
 
-  // ## Form Submission Handler ##
-  // calls the mock API, then navigates to confirmation on success
+  // submit handler — calls API then redirects on success
   const submitForm = (formData) => {
     const success = submitAPI(formData);
     if (success) {

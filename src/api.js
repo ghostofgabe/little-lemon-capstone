@@ -1,7 +1,5 @@
-// ## Mock API ##
-// simulates a backend for the booking system
-// seeded random ensures consistent time slots for any given date
-// this is the exact API provided by the Meta FE capstone spec
+// mock API from the Meta capstone spec
+// seeded random so the same date always gives the same time slots
 
 const seededRandom = function (seed) {
     var m = 2**35 - 31;

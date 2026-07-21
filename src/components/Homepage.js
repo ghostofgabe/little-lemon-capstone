@@ -3,9 +3,7 @@ import Specials from './Specials';
 import Testimonials from './Testimonials';
 import About from './About';
 
-// ## Homepage Component ##
-// composes the landing page from individual sections
-// each section is its own component for clean separation
+// landing page — just puts the sections together
 
 function Homepage() {
   return (

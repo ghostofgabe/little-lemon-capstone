@@ -6,15 +6,12 @@ import BookingForm from './components/BookingForm';
 import BookingPage from './components/BookingPage';
 import Nav from './components/Nav';
 
-// ## Helper ##
-// wrapping components in BrowserRouter since they use Link/Route
+// need to wrap in BrowserRouter because components use Link
 const renderWithRouter = (ui) => {
   return render(<BrowserRouter>{ui}</BrowserRouter>);
 };
 
-// ## initializeTimes Tests ##
-// making sure the reducer initializer returns a non-empty array
-// from the mock API for today's date
+// initializeTimes should give us times from the API for today
 
 describe('initializeTimes', () => {
   test('returns a non-empty array of available times', () => {
@@ -30,8 +27,7 @@ describe('initializeTimes', () => {
   });
 });
 
-// ## updateTimes Tests ##
-// reducer should return new times from fetchAPI when given a date
+// updateTimes reducer
 
 describe('updateTimes', () => {
   test('returns updated times when UPDATE_TIMES action is dispatched', () => {
@@ -48,7 +44,7 @@ describe('updateTimes', () => {
   });
 });
 
-// ## BookingForm Tests ##
+// form tests
 
 describe('BookingForm', () => {
   const mockDispatch = jest.fn();
@@ -109,7 +105,7 @@ describe('BookingForm', () => {
   });
 });
 
-// ## BookingPage Tests ##
+// page heading
 
 describe('BookingPage', () => {
   test('renders the Reserve a Table heading', () => {
@@ -123,8 +119,6 @@ describe('BookingPage', () => {
     expect(screen.getByText(/reserve a table/i)).toBeInTheDocument();
   });
 });
-
-// ## Nav Tests ##
 
 describe('Nav', () => {
   test('renders navigation links', () => {

@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Nav.css';
 
-// ## Navigation Component ##
-// main site navigation — uses React Router Links for client-side routing
-// semantic <nav> with aria-label for screen readers
+// nav links — using Link for pages that have routes, regular <a> for scroll anchors
 
 function Nav() {
   return (

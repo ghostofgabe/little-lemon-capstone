@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import './ConfirmedBooking.css';
 
-// ## Confirmed Booking Page ##
-// success state after form submission
-// simple and clear — user knows their reservation went through
+// shows after successful booking
 
 function ConfirmedBooking() {
   return (

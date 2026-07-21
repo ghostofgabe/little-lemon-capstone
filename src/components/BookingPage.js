@@ -1,9 +1,7 @@
 import BookingForm from './BookingForm';
 import './BookingPage.css';
 
-// ## Booking Page ##
-// wrapper component that provides layout context for the form
-// receives state and dispatch from App via props (lifted state pattern)
+// booking page layout — gets state + dispatch passed down from App
 
 function BookingPage({ availableTimes, dispatch, submitForm }) {
   return (

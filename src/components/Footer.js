@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
-// ## Footer Component ##
-// three-column layout: branding, nav links, contact info
-// semantic <footer> element with contact anchor for nav link
+// footer — 3 columns: branding, nav, contact
 
 function Footer() {
   return (

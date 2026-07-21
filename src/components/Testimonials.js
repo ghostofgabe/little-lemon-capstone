@@ -1,8 +1,6 @@
 import './Testimonials.css';
 
-// ## Testimonials Section ##
-// social proof from customers — hardcoded for the capstone
-// using <article> for each review since they're self-contained content
+// customer reviews
 
 const reviews = [
   {

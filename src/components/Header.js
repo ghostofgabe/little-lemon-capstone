@@ -1,9 +1,7 @@
 import Nav from './Nav';
 import './Header.css';
 
-// ## Header Component ##
-// site-wide header with the restaurant branding and navigation
-// using semantic <header> for accessibility
+// header with logo + nav
 
 function Header() {
   return (

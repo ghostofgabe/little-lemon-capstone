@@ -1,8 +1,6 @@
 import './Specials.css';
 
-// ## Specials Section ##
-// shows featured menu items as cards
-// data is hardcoded since this is a frontend-only project
+// weekly specials — hardcoded data since theres no backend
 
 const specials = [
   {

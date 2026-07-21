@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Hero.css';
 
-// ## Hero Section ##
-// the big intro banner — CTA drives users to the booking page
-// placeholder image uses a styled gradient div instead of an external file
+// hero banner with CTA button to booking page
 
 function Hero() {
   return (

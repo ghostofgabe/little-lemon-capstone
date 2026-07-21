@@ -1,21 +1,15 @@
 import { useState } from 'react';
 import './BookingForm.css';
 
-// ## Booking Form Component ##
-// controlled form with client-side validation
-// each input is tied to state — same idea as binding UI widgets in a game engine
-// validation runs on every change and on submit for good UX
+// controlled form — each input tied to state, validation on change + submit
 
 function BookingForm({ availableTimes, dispatch, submitForm }) {
-  // ## Form State ##
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('');
 
-  // ## Touched State ##
-  // tracking which fields the user has interacted with
-  // so we only show errors after they've touched a field
+  // track which fields user has clicked into so we dont show errors right away
   const [touched, setTouched] = useState({
     date: false,
     time: false,
@@ -23,9 +17,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     occasion: false,
   });
 
-  // ## Validation Logic ##
-  // returns an object with error messages for each field
-  // empty string means valid — keeps the check simple
+  // validation — returns error messages for any empty/invalid fields
   const getErrors = () => {
     const errors = {};
     if (!date) {
@@ -46,7 +38,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   const errors = getErrors();
   const isFormValid = Object.keys(errors).length === 0;
 
-  // ## Field Handlers ##
   const handleDateChange = (e) => {
     const selectedDate = e.target.value;
     setDate(selectedDate);
@@ -58,7 +49,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
 
-  // ## Form Submission ##
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -77,7 +67,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
       aria-label="Table reservation form"
       noValidate
     >
-      {/* ## Date Field ## */}
+      {/* date */}
       <div className="form-field">
         <label htmlFor="booking-date">Date</label>
         <input
@@ -98,7 +88,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         )}
       </div>
 
-      {/* ## Time Field ## */}
+      {/* time — disabled until a date is picked */}
       <div className="form-field">
         <label htmlFor="booking-time">Time</label>
         <select
@@ -125,7 +115,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         )}
       </div>
 
-      {/* ## Guests Field ## */}
+      {/* guests */}
       <div className="form-field">
         <label htmlFor="booking-guests">Number of Guests</label>
         <input
@@ -147,7 +137,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         )}
       </div>
 
-      {/* ## Occasion Field ## */}
       <div className="form-field">
         <label htmlFor="booking-occasion">Occasion</label>
         <select
@@ -175,7 +164,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         )}
       </div>
 
-      {/* ## Submit Button ## */}
       <button
         type="submit"
         className="btn-primary submit-btn"

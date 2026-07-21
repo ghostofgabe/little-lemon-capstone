@@ -1,8 +1,6 @@
 import './About.css';
 
-// ## About Section ##
-// restaurant backstory — two-column layout with text and placeholder image
-// this section doubles as an anchor target from the nav
+// about section — also the anchor target for the About nav link
 
 function About() {
   return (
