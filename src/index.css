@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ## CSS Reset & Global Styles ## */
+/* keeping it simple — normalize defaults, set up brand fonts */
+
+:root {
+  --primary-green: #495E57;
+  --primary-yellow: #F4CE14;
+  --secondary-salmon: #EE9972;
+  --secondary-peach: #FBDABB;
+  --highlight-light: #EDEFEE;
+  --highlight-dark: #333333;
+  --white: #FFFFFF;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--highlight-dark);
+  background-color: var(--white);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Markazi Text', serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ## Utility Container ## */
+/* centers content with consistent padding across all sections */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
 }
