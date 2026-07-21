@@ -1,0 +1,92 @@
+/* ## Booking Form Styles ## */
+
+.booking-form {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ## Form Field Layout ## */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-field label {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--highlight-dark);
+}
+
+.form-field input,
+.form-field select {
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  padding: 0.65rem 0.75rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--highlight-dark);
+  transition: border-color 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(73, 94, 87, 0.15);
+}
+
+/* ## Invalid State ## */
+.form-field input[aria-invalid="true"],
+.form-field select[aria-invalid="true"] {
+  border-color: #d32f2f;
+}
+
+.form-field input:disabled,
+.form-field select:disabled {
+  background-color: var(--highlight-light);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ## Error Messages ## */
+.form-error {
+  font-size: 0.85rem;
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+/* ## Submit Button ## */
+.submit-btn {
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+  padding: 0.85rem;
+  width: 100%;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-btn:disabled:hover {
+  background-color: var(--primary-yellow);
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .booking-form {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+  }
+}
