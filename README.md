@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# Little Lemon - Table Reservation App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-v6-CA4245?logo=reactrouter&logoColor=white)
+![Jest](https://img.shields.io/badge/Tested_with-Jest-C21325?logo=jest&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Available Scripts
+A React front-end app for **Little Lemon**, a fictional Mediterranean restaurant in Chicago. Built as the capstone project for the [Meta Front-End Developer Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer) on Coursera.
 
-In the project directory, you can run:
+The app features a complete table reservation system with form validation, responsive design, and accessible markup.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## About Me
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Tyler S.** -- I come from a game dev background (Source Engine modding, Unreal Engine, Godot) and I'm working through the Meta Front-End Developer certificate to round out my web dev skills. React components clicked fast for me -- they're basically prefabs with props, which made the mental model easy to pick up. Based in New Mexico, into MMA, and building out my portfolio one project at a time.
 
-### `npm test`
+- GitHub: [ghostofgabe](https://github.com/ghostofgabe)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Table Reservation System** -- date picker, time selector (times update based on selected date), guest count, occasion picker
+- **Client-Side Validation** -- real-time error messages, disabled submit until all fields are valid, touched-field tracking so errors don't yell at you before you've even started
+- **Responsive Design** -- mobile-first CSS with Grid and Flexbox, breakpoints at 768px and 1024px
+- **Accessible** -- semantic HTML (`header`, `nav`, `main`, `section`, `article`, `footer`), ARIA labels on form inputs, proper heading hierarchy, keyboard navigable
+- **React Router v6** -- client-side routing for Home, Booking, and Confirmation pages
+- **useReducer for State** -- available booking times managed through a reducer since they depend on the selected date
+- **Unit Tests** -- Jest + React Testing Library covering form rendering, validation, state initialization, and reducer logic
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech Stack
 
-### `npm run eject`
+| Tool | Purpose |
+|------|---------|
+| React 18 (CRA) | UI framework |
+| React Router v6 | Client-side routing |
+| CSS (vanilla) | Styling -- no CSS-in-JS, keeping it straightforward |
+| Jest + RTL | Unit testing |
+| Google Fonts | Markazi Text + Karla (Little Lemon brand fonts) |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# clone the repo
+git clone https://github.com/ghostofgabe/little-lemon-capstone.git
+cd little-lemon-capstone
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# install dependencies
+npm install
 
-## Learn More
+# start the dev server
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The app runs at `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Running Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm test
+```
 
-### Analyzing the Bundle Size
+Tests cover:
+- `initializeTimes` returns expected available times from the mock API
+- `updateTimes` reducer returns updated times when date changes
+- `BookingForm` renders all fields correctly
+- Form validation shows errors on touched empty fields
+- Submit button is disabled when form is incomplete
+- `BookingPage` renders the heading
+- `Nav` renders all navigation links
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+src/
+├── api.js                    # Mock API (seeded random time slots)
+├── App.js                    # Root component, routing, reducer
+├── App.css
+├── App.test.js               # All unit tests
+├── index.js                  # Entry point with BrowserRouter
+├── index.css                 # Global styles, CSS variables
+└── components/
+    ├── Header.js + .css      # Site header with logo
+    ├── Nav.js + .css         # Navigation links
+    ├── Hero.js + .css        # Landing hero with CTA
+    ├── Specials.js + .css    # Featured menu items
+    ├── Testimonials.js + .css # Customer reviews
+    ├── About.js + .css       # Restaurant backstory
+    ├── Footer.js + .css      # Contact info, nav
+    ├── BookingForm.js + .css # Reservation form with validation
+    ├── BookingPage.js + .css # Form wrapper/layout
+    ├── ConfirmedBooking.js + .css # Success page
+    └── Homepage.js           # Composes landing page sections
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Design Decisions
 
-### Deployment
+**Why useReducer instead of useState for available times?**
+The available time slots depend on the selected date -- when the date changes, the times need to update. A reducer keeps that dependency logic in one place instead of scattering it across multiple `useEffect` calls. It's a cleaner pattern when state transitions depend on actions, similar to how a state machine handles game state.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Why vanilla CSS?**
+The Meta FE capstone specs don't call for CSS-in-JS or utility frameworks. Keeping it vanilla also means the CSS is easy to read and there's no build tooling overhead. Each component gets its own stylesheet for clean separation.
 
-### `npm run build` fails to minify
+**Why controlled components with manual validation?**
+No form library (Formik, React Hook Form, etc.) -- this is a capstone project, so I wanted to show I understand how controlled inputs and validation work under the hood. The validation is simple enough that a library would be overkill anyway.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Image placeholders instead of real images?**
+Used CSS gradients and emoji instead of external image files. Keeps the repo lightweight and avoids any licensing concerns. The layout and design still demonstrate responsive image handling.
+
+---
+
+## License
+
+MIT -- see [LICENSE](./LICENSE)
