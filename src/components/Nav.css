@@ -1,0 +1,35 @@
+/* ## Nav Styles ## */
+
+.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.main-nav a {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--highlight-dark);
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+  .main-nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+  }
+}

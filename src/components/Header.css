@@ -1,0 +1,54 @@
+/* ## Header Styles ## */
+
+.site-header {
+  background-color: var(--white);
+  border-bottom: 3px solid var(--primary-yellow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 2.25rem;
+}
+
+.logo-text h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 2rem;
+  color: var(--primary-green);
+  line-height: 1;
+  margin: 0;
+}
+
+.logo-subtitle {
+  font-family: 'Karla', sans-serif;
+  font-size: 0.85rem;
+  color: var(--highlight-dark);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .logo-text h1 {
+    font-size: 1.75rem;
+  }
+}
