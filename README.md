@@ -11,14 +11,6 @@ The app features a complete table reservation system with form validation, respo
 
 ---
 
-## About Me
-
-**Tyler S.** -- I come from a game dev background (Source Engine modding, Unreal Engine, Godot) and I'm working through the Meta Front-End Developer certificate to round out my web dev skills. React components clicked fast for me -- they're basically prefabs with props, which made the mental model easy to pick up. Based in New Mexico, into MMA, and building out my portfolio one project at a time.
-
-- GitHub: [ghostofgabe](https://github.com/ghostofgabe)
-
----
-
 ## Features
 
 - **Table Reservation System** -- date picker, time selector (times update based on selected date), guest count, occasion picker
